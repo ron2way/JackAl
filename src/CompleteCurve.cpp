@@ -6,8 +6,8 @@
 #include <ArduinoJson.h>
 
 // --- WiFi Credentials ---
-const char* ssid = "YOUR_WIFI_SSID";
-const char* password = "YOUR_WIFI_PASSWORD";
+const char* ssid = "2WIRE734";
+const char* password = "6797713769";
 
 AsyncWebServer server(80);
 Adafruit_INA219 ina219;
@@ -121,9 +121,9 @@ void setup() {
 //  ina219.setCalibration_32V_400mA();
  ina219.setCalibration_16V_400mA();
   // Configure PWM Peripheral for DC Voltage Generation
- // ledcSetup(pwmChannel, pwmFreq, pwmResolution);
- // ledcAttachPin(pwmPin, pwmChannel);
- ledcAttach(ledcPin, pwmFreq,pwmResolution);
+  ledcSetup(pwmChannel, pwmFreq, pwmResolution);
+  ledcAttachPin(pwmPin, pwmChannel);
+ //ledcAttach(ledcPin, pwmFreq,pwmResolution);
  
   ledcWrite(pwmChannel, 0); // Start at 0V
 
